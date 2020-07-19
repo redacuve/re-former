@@ -1,0 +1,21 @@
+
+</div>
+   <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= form_for(@user, method: 'patch') do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username, value: @user.username %>
+<%= f.label :email %>
+<%= f.text_field :email, value: @user.email %>
+<%= f.label :password %>
+<%= f.password_field :password, value: @user.password %>
+<%= f.submit "Submit" %>
+<% end %>
+
+
+
